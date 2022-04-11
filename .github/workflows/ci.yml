@@ -49,4 +49,4 @@ jobs:
         run: yarn run coverage
         continue-on-error: false
       - name: Upload coverage
-        run: bash <(curl -s https://codecov.io/bash)
+        run: echo "No test specified"
