@@ -1,7 +1,7 @@
 # web
 
 [![Build Status](https://github.com/issuerail/web/workflows/ci/badge.svg?branch=main&event=push)](https://github.com/issuerail/web/actions?query=workflow%3Aci)
-[![codecov](https://codecov.io/gh/issuerail/web/branch/main/graph/badge.svg?token=p6goS9Jj4g)](https://codecov.io/gh/issuerail/web)
+[![codecov](https://codecov.io/gh/issuerail/web/branch/main/graph/badge.svg?token=AP8HMAC3PZ)](https://codecov.io/gh/issuerail/web)
 [![License](https://img.shields.io/github/license/issuerail/web.svg)](https://github.com/issuerail/web/blob/main/LICENSE)
 [![Tag](https://img.shields.io/github/tag/issuerail/web.svg)](https://github.com/issuerail/web/tags)
 
