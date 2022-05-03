@@ -22,9 +22,9 @@
 ## Run
 
 ```bash
-yarn 
-yarn run build
-yarn run start
+yarn
+yarn build
+yarn start
 ```
 
 
