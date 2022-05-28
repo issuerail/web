@@ -33,8 +33,7 @@ module.exports = configure(function (ctx) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-webpack/boot-files
     boot: [
-      
-      
+      'router-auth',
     ],
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-css
@@ -88,7 +87,14 @@ module.exports = configure(function (ctx) {
         type: 'http'
       },
       port: 8080,
-      open: true // opens browser window automatically
+      open: true, // opens browser window automatically
+      proxy: {
+        '/': {
+          target: process.env.SERVER_API_URL,
+          changeOrigin: true,
+          secure: false,
+        },
+      },
     },
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-framework
@@ -106,7 +112,7 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: ['Dialog', 'Notify', 'LocalStorage'],
     },
 
     // animations: 'all', // --- includes all animations
@@ -146,7 +152,7 @@ module.exports = configure(function (ctx) {
       manifest: {
         name: 'issuerail',
         short_name: 'issuerail',
-        description: '',
+        description: 'A issue tracker',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',

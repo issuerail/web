@@ -11,6 +11,14 @@
 
 *web* is the web of [issuerail](https://github.com/issuerail) written in Vue.
 
+If you want to give it a try, you can install it for free (see section below) or you can just use the online
+[demo](https://demo-issuerail.vercel.app) hosted on Vercel.
+
+Demo credentials are :
+
+- Email: admin@demo.com
+- Password: admin
+
 
 
 ## Prerequisites
@@ -22,8 +30,7 @@
 ## Run
 
 ```bash
-yarn
-yarn build
+export SERVER_API_URL=http://127.0.0.1:8081
 yarn start
 ```
 
@@ -38,14 +45,6 @@ docker run -p 443:443 -p 8080:80 ghcr.io/issuerail/web:latest
 
 
 
-## Usage
-
-```
-TBD
-```
-
-
-
 ## License
 
 Project License can be found [here](LICENSE).
@@ -54,6 +53,7 @@ Project License can be found [here](LICENSE).
 
 ## Reference
 
+- [dashblocks-template](https://github.com/slanatech/dashblocks-template)
 - [expense-tracker](https://github.com/rbretecher/expense-tracker)
 - [monorail](https://bugs.chromium.org/p/gerrit/issues/list)
 - [quasar](https://quasar.dev)
