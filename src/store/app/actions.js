@@ -1,12 +1,11 @@
 import { Loading } from 'quasar';
+import { requestPost } from 'src/requests/rest-api';
 import { showErrorMessageWithTitle } from 'src/functions/show-error-message';
-
-import { executeRequest } from 'src/client/json-rpc';
 
 export async function login({ dispatch }, { email, password }) {
   Loading.show();
   try {
-    const user = await executeRequest('User.Login', {
+    const user = await requestPost('/login', {
       email,
       password,
     });

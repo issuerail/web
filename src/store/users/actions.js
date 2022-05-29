@@ -2,13 +2,13 @@ import {
   Loading, Notify, LocalStorage,
 } from 'quasar';
 
-import { executeRequest, setAxiosHeaders } from 'src/client/json-rpc';
+import { requestDel, requestGet, requestPost, requestPut, setToken } from 'src/requests/rest-api';
 import { showErrorMessageWithTitle } from 'src/functions/show-error-message';
 
 export function login({ commit }, user) {
   commit('setCurrentUser', user);
   LocalStorage.set('user', user);
-  setAxiosHeaders(user.jwt);
+  setToken(user.jwt);
 }
 
 export function logout({ commit }) {
@@ -18,8 +18,7 @@ export function logout({ commit }) {
 
 export async function loadUsers({ commit }) {
   try {
-    const categories = await executeRequest('User.All');
-
+    const categories = await requestGet('/users');
     commit('setUsers', categories);
   } catch (e) {
     showErrorMessageWithTitle('Could not load users', e.message);
@@ -29,7 +28,7 @@ export async function loadUsers({ commit }) {
 export async function addUser({ dispatch }, user) {
   try {
     Loading.show();
-    await executeRequest('User.Create', user);
+    await requestPost('/users', user);
     await dispatch('loadUsers');
     Loading.hide();
 
@@ -42,7 +41,7 @@ export async function addUser({ dispatch }, user) {
 export async function updateUser({ dispatch }, user) {
   try {
     Loading.show();
-    await executeRequest('User.Update', user);
+    await requestPut('/users', user);
     await dispatch('loadUsers');
     Loading.hide();
 
@@ -55,7 +54,7 @@ export async function updateUser({ dispatch }, user) {
 export async function deleteUser({ dispatch }, id) {
   try {
     Loading.show();
-    await executeRequest('User.Delete', { id });
+    await requestDel('/users', { id });
     await dispatch('loadUsers');
     Loading.hide();
 
