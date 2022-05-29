@@ -10,7 +10,7 @@ export function requestDel(url) {
       console.log(data.error);
       throw data.error;
     }
-    return data.result;
+    return data;
   });
 }
 
@@ -24,7 +24,7 @@ export function requestGet(url) {
       console.log(data.error);
       throw data.error;
     }
-    return data.result;
+    return data;
   });
 }
 
@@ -38,7 +38,7 @@ export function requestPost(url, body) {
       console.log(data.error);
       throw data.error;
     }
-    return data.result;
+    return data;
   });
 }
 
@@ -52,7 +52,7 @@ export function requestPut(url, body) {
       console.log(data.error);
       throw data.error;
     }
-    return data.result;
+    return data;
   });
 }
 
