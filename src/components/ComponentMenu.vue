@@ -13,7 +13,7 @@
 <script lang='ts'>
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'MenuComponent',
+  name: 'ComponentMenu',
   props: {
     title: {
       type: String,

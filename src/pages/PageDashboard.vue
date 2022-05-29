@@ -1,15 +1,15 @@
 <template>
-  <ListComponent title='Issues' :issues='issues'/>
+  <ComponentList title='Issues' :issues='issues'/>
 </template>
 
 <script lang='ts'>
 import { defineComponent, ref } from 'vue'
 import { Issue } from 'components/models'
-import ListComponent from 'components/ListComponent.vue'
+import ComponentList from 'components/ComponentList.vue'
 export default defineComponent ({
-  name: 'ListPage',
+  name: 'PageDashboard',
   components: {
-    ListComponent,
+    ComponentList,
   },
   setup () {
     const issues = ref<Issue[]>([

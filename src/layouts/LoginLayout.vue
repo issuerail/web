@@ -64,6 +64,7 @@
 import { mapActions } from 'vuex';
 
 export default {
+  name: 'LoginLayout',
   data() {
     return {
       email: null,

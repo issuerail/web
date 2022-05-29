@@ -6,6 +6,6 @@
 <script lang='ts'>
 import { defineComponent } from 'vue'
 export default defineComponent({
-  name: 'IssueComponent'
+  name: 'ComponentIssue'
 })
 </script>

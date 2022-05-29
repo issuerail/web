@@ -16,7 +16,7 @@
         <q-item-label header>
           Menu
         </q-item-label>
-        <MenuComponent v-for='item in menuComponentList' :key='item.title' v-bind='item'/>
+        <ComponentMenu v-for='item in menuComponentList' :key='item.title' v-bind='item'/>
       </q-list>
     </q-drawer>
     <q-page-container>
@@ -27,8 +27,8 @@
 
 <script lang='ts'>
 import { defineComponent, ref } from 'vue'
-import MenuComponent from 'components/MenuComponent.vue'
-const menuComponentList = [
+import ComponentMenu from 'components/ComponentMenu.vue'
+const componentMenuList = [
   {
     title: 'Docs',
     caption: 'quasar.dev',
@@ -52,12 +52,12 @@ const menuComponentList = [
 export default defineComponent({
   name: 'MainLayout',
   components: {
-    MenuComponent,
+    ComponentMenu,
   },
   setup () {
     const leftDrawerOpen = ref(false)
     return {
-      menuComponentList: menuComponentList,
+      componentMenuList: componentMenuList,
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value

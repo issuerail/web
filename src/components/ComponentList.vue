@@ -90,7 +90,7 @@ const columns = [
   { name: 'reporter', align: 'left', label: 'Reporter', field: 'reporter', sortable: true, required: true },
 ]
 export default defineComponent({
-  name: 'ListComponent',
+  name: 'ComponentList',
   props: {
     title: {
       type: String,
