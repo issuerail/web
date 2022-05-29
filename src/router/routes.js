@@ -1,6 +1,4 @@
-import { RouteRecordRaw } from 'vue-router';
-
-const routes: RouteRecordRaw[] = [
+const routes = [
   {
     path: '/login',
     component: () => import('layouts/LoginLayout.vue'),
