@@ -6,9 +6,13 @@
         <q-toolbar-title>
           issuerail
         </q-toolbar-title>
-        <q-btn round flat size='md'>
-          Jia
-        </q-btn>
+        <q-btn
+          flat
+          dense
+          icon="exit_to_app"
+          label="Logout"
+          @click="logoutUser"
+        />
       </q-toolbar>
     </q-header>
     <q-drawer v-model='leftDrawerOpen' bordered>
@@ -16,7 +20,7 @@
         <q-item-label header>
           Menu
         </q-item-label>
-        <ComponentMenu v-for='item in menuComponentList' :key='item.title' v-bind='item'/>
+        <ComponentMenu v-for='item in menuComponentList' :key='item.title' v-bind='item' title=""/>
       </q-list>
     </q-drawer>
     <q-page-container>
@@ -27,6 +31,7 @@
 
 <script lang='ts'>
 import { defineComponent, ref } from 'vue'
+import { mapActions } from 'vuex';
 import ComponentMenu from 'components/ComponentMenu.vue'
 const componentMenuList = [
   {
@@ -62,6 +67,12 @@ export default defineComponent({
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }
+    }
+  },
+  methods: {
+    ...mapActions('app', ['logout']),
+    logoutUser() {
+      this.logout();
     }
   }
 });
